@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/userservice'
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  application:
+    name: fego-user
+server:
+  port: 8080
+integration:
+  baseUrl: 'http://localhost:7080/'
+  otpSend: v1/registration/otpsend
+  otpVerify: v1/registration/otpverify
+  linkAccount: v1/accounts/linkaccounts-otpsend
+  verifyAccountLink: v1/accounts/linkaccounts-otpverify
+  consentRequest: v1/consent/request-consent
+  approveConsentRequest: v1/consent/request-consent/approve
+  rejectConsentRequest: v1/consent/request-consent/reject
+transaction:
+  baseURL: 'http://localhost:8081/'
+  save: v1/transaction/save
+aws:
+  access_key_id: AKIA32E6HVBNSYSNOS4M
+  secret_access_key: AjMbN2j0Zwl5lG3rBUEU1eyNXBLzoke1o0QEgpmI
+  region: us-east-2
+  bucketName: lg-sample-bucket
